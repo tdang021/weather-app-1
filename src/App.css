@@ -1,3 +1,24 @@
 .App {
-  text-align: center;
+  margin: 50px auto;
+  max-width: 600px;
+}
+
+.App footer {
+  margin-top: 10px;
+}
+
+.App form {
+  margin-bottom: 25px;
+}
+
+.App h6 {
+  line-height: 15px;
+}
+
+.App h1 {
+  line-height: 30px;
+}
+
+.App h5 {
+  line-height: 25px;
 }
