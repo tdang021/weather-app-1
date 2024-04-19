@@ -1,11 +1,23 @@
+import React, { useState } from "react";
 import "./App.css";
+import axios from "axios";
 
 function App() {
+  let [city, setCity] = useState(null);
+
+  function handleSubmit(event) {
+    event.preventDefault();
+  }
+
+  function searchCity(event) {
+    setCity(event.target.value);
+  }
+
   return (
     <div className="App">
       <div className="container">
         <div className="app-container" class="border p-3">
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="row">
               <div className="col-9">
                 <input
@@ -13,6 +25,7 @@ function App() {
                   placeholder="Enter a city..."
                   autofocus="on"
                   class="w-100 h-100"
+                  onChange={searchCity}
                 />
               </div>
               <div className="col-3">
