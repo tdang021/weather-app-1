@@ -2,15 +2,23 @@ import React, { useState } from "react";
 import "./App.css";
 import axios from "axios";
 
-function App() {
+export default function App() {
   let [city, setCity] = useState(null);
+  let [temp, setTemp] = useState(null);
 
   function handleSubmit(event) {
     event.preventDefault();
+    const apiKey = `32feea4cbb7bc29288ae4d4a2465feab`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metricChar`;
+    axios.get(apiUrl).then(getWeather);
   }
 
   function searchCity(event) {
     setCity(event.target.value);
+  }
+
+  function getWeather(response) {
+    setTemp(response.data.main.temp);
   }
 
   return (
@@ -39,6 +47,7 @@ function App() {
           </form>
 
           <h1>Paris</h1>
+          <div>{temp}</div>
           <h5>Friday, April 19 15:30</h5>
 
           <div class="row">
@@ -74,5 +83,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
