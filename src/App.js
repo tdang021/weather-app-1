@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
+import WeatherInfo from "./WeatherInfo.js";
 import axios from "axios";
 
 export default function App(props) {
@@ -60,25 +61,7 @@ export default function App(props) {
               </div>
             </form>
 
-            <h1>{city}</h1>
-            <h5>Friday, April 19 15:30</h5>
-
-            <div class="row">
-              <div class="col-6">
-                <h6 class="text-capitalize">{weatherData.description}</h6>
-                <h5>
-                  <img
-                    src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
-                    alt="clear sky"
-                  />{" "}
-                  {Math.round(weatherData.temp)}°C
-                </h5>
-              </div>
-              <div class="col-6">
-                <h6>Humidity: {weatherData.humidity}%</h6>
-                <h6>Wind: {weatherData.wind} m/s</h6>
-              </div>
-            </div>
+            <WeatherInfo data={weatherData} />
           </div>
           <footer>
             This website was coded by Tiffany and is open-sourced on{" "}
