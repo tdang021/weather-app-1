@@ -1,10 +1,13 @@
 import React from "react";
+import FormattedDate from "./FormattedDate";
 
 export default function WeatherInfo(props) {
   return (
     <div>
       <h1>{props.data.city}</h1>
-      <h5>Friday, April 19 15:30</h5>
+      <h5>
+        <FormattedDate date={props.data.date} />
+      </h5>
 
       <div class="row">
         <div class="col-6">
