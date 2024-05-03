@@ -1,0 +1,15 @@
+.WeatherInfo h1 {
+  line-height: 30px;
+}
+
+.WeatherInfo h5 {
+  line-height: 25px;
+}
+
+.WeatherInfo h6 {
+  line-height: 15px;
+}
+
+.WeatherInfo .tempInfo {
+  font-size: 50px;
+}
