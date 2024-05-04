@@ -13,3 +13,17 @@
 .WeatherInfo .tempInfo {
   font-size: 50px;
 }
+
+.WeatherInfo .tempConversion {
+  font-size: 50px;
+}
+
+.WeatherInfo .tempUnit {
+  position: relative;
+  top: -25px;
+  left: -8px;
+}
+
+.WeatherInfo .tempIcon {
+  margin-right: 10px;
+}

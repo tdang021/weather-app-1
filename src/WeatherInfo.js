@@ -15,13 +15,10 @@ export default function WeatherInfo(props) {
 
       <div class="row">
         <div class="col-6">
-          <div className="weatherTemp">
-            <span>
+          <div>
+            <span className="tempIcon">
               <WeatherIcon code={props.data.icon} />{" "}
             </span>
-          </div>
-
-          <div>
             <span>
               <TempConversion celcius={Math.round(props.data.temp)} />
             </span>

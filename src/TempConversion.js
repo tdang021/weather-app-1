@@ -15,32 +15,32 @@ export default function TempConversion(props) {
 
   if (unit === "celcius") {
     return (
-      <div className="tempConversion">
-        <span>
+      <span>
+        <span className="tempConversion">
           {Math.round(props.celcius)} {""}
         </span>
-        <span>
+        <span className="tempUnit">
           C° |{" "}
           <a href="/" onClick={showFahrenheit}>
             °F
           </a>
         </span>
-      </div>
+      </span>
     );
   } else {
     let fahrenheit = (props.celcius * 9) / 5 + 32;
     return (
-      <div className="tempConversion">
-        <span>
+      <span>
+        <span className="tempConversion">
           {Math.round(fahrenheit)} {""}
         </span>
-        <span>
+        <span className="tempUnit">
           <a href="/" onClick={showCelcius}>
             C°
           </a>{" "}
           | °F
         </span>
-      </div>
+      </span>
     );
   }
 }
