@@ -6,16 +6,12 @@
   line-height: 25px;
 }
 
-.WeatherInfo h6 {
-  line-height: 15px;
-}
-
 .WeatherInfo .tempInfo {
   font-size: 50px;
 }
 
 .WeatherInfo .tempConversion {
-  font-size: 50px;
+  font-size: 60px;
 }
 
 .WeatherInfo .tempUnit {
@@ -24,6 +20,12 @@
   left: -8px;
 }
 
-.WeatherInfo .tempIcon {
-  margin-right: 10px;
+.WeatherInfo .current-temp {
+  position: relative;
+  top: 12px;
+}
+
+.WeatherInfo .weatherData {
+  position: relative;
+  top: 32px;
 }

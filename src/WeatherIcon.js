@@ -1,36 +1,31 @@
 import React from "react";
-import ReactAnimatedWeather from "react-animated-weather";
 
 export default function WeatherIcon(props) {
   const codeMapping = {
-    "01d": "CLEAR_DAY",
-    "01n": "CLEAR_NIGHT",
-    "02d": "PARTLY_CLOUDY_DAY",
-    "02n": "PARTLY_CLOUDY_NIGHT",
-    "03d": "PARTLY_CLOUDY_DAY",
-    "03n": "PARTLY_CLOUDY_NIGHT",
-    "04d": "CLOUDY",
-    "04n": "CLOUDY",
-    "09d": "RAIN",
-    "09n": "RAIN",
-    "10d": "RAIN",
-    "10n": "RAIN",
-    "11d": "RAIN",
-    "11n": "RAIN",
-    "13d": "SNOW",
-    "13n": "SNOW",
-    "50d": "FOG",
-    "50n": "FOG",
+    "01d": "clear-sky-day",
+    "01n": "clear-sky-night",
+    "02d": "few-clouds-day",
+    "02n": "few-clouds-night",
+    "03d": "scattered-clouds-day",
+    "03n": "scattered-clouds-night",
+    "04d": "broken-clouds-day",
+    "04n": "broken-clouds-night",
+    "09d": "shower-rain-day",
+    "09n": "shower-rain-night",
+    "10d": "rain-day",
+    "10n": "rain-night",
+    "11d": "thunderstorm-day",
+    "11n": "thunderstorm-night",
+    "13d": "snow-day",
+    "13n": "snow-night",
+    "50d": "mist-day",
+    "50n": "mist-night",
   };
 
-  return (
-    <span>
-      <ReactAnimatedWeather
-        icon={codeMapping[props.code]}
-        color="black"
-        size={props.size}
-        animate={true}
-      />
-    </span>
-  );
+  function source() {
+    return `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+      codeMapping[props.code]
+    }.png`;
+  }
+  return <img src={source()} alt={props.text} />;
 }
