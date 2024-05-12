@@ -8,6 +8,7 @@ export default function App(props) {
   let [weatherData, setWeatherData] = useState({ ready: false });
 
   function getWeather(response) {
+    console.log(setWeatherData);
     setWeatherData({
       ready: true,
       temp: response.data.main.temp,
@@ -16,6 +17,7 @@ export default function App(props) {
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
       city: response.data.name,
+      coordinates: response.data.coord,
       date: new Date(response.data.dt * 1000),
     });
   }
@@ -39,7 +41,7 @@ export default function App(props) {
     return (
       <div className="App">
         <div className="container">
-          <div className="app-container" class="border p-3">
+          <div className="app-container border p-3">
             <form onSubmit={handleSubmit}>
               <div className="row">
                 <div className="col-9">
@@ -55,7 +57,7 @@ export default function App(props) {
                   <input
                     type="submit"
                     value="Search"
-                    class="btn btn-primary w-100"
+                    className="btn btn-primary w-100"
                   />
                 </div>
               </div>

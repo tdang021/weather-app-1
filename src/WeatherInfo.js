@@ -3,6 +3,7 @@ import FormattedDate from "./FormattedDate";
 import WeatherIcon from "./WeatherIcon";
 import "./WeatherInfo.css";
 import TempConversion from "./TempConversion";
+import WeatherForecast from "./WeatherForecast";
 
 export default function WeatherInfo(props) {
   return (
@@ -17,7 +18,7 @@ export default function WeatherInfo(props) {
         <div class="col-6">
           <div>
             <span className="tempIcon">
-              <WeatherIcon code={props.data.icon} />{" "}
+              <WeatherIcon code={props.data.icon} size={42} />{" "}
             </span>
             <span>
               <TempConversion celcius={Math.round(props.data.temp)} />
@@ -28,6 +29,14 @@ export default function WeatherInfo(props) {
         <div class="col-6">
           <h6>Humidity: {props.data.humidity}%</h6>
           <h6>Wind: {props.data.wind} m/s</h6>
+        </div>
+      </div>
+
+      <hr />
+
+      <div className="row">
+        <div className="col">
+          <WeatherForecast location={props.data.coordinates} />
         </div>
       </div>
     </div>
